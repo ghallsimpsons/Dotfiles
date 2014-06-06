@@ -1,7 +1,7 @@
 # git config
 [user]
-	name = Jake Teton-Landis
-	email = just.1.jake@gmail.com
+	name = Zach Schneider
+	email = zschneider@berkeley.edu
 [color]
 	diff = auto
 	status = auto
@@ -21,4 +21,4 @@
 [core]
 	excludesfile = ~/.dotfiles/gitignore_global
 [github]
-	user = justjake
+	user = zschneider

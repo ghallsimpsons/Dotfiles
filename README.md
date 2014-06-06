@@ -1,4 +1,4 @@
-# Jake Teton-Landis's Dotfiles
+# Zach's Dotfiles
 
 Because I need them somewhere.
 

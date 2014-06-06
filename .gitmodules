@@ -1,9 +1,3 @@
-[submodule "osx/iterm2-colors"]
-    path = osx/iterm2-colors
-    url = https://github.com/baskerville/iTerm-2-Color-Themes.git
-[submodule "lscolors/256"]
-	path = lscolors/256
-	url = https://github.com/trapd00r/LS_COLORS.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim
