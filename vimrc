@@ -20,7 +20,7 @@ Plugin 'DamienCassou/textlint'           " :TextLint or <leader>tl. see :help qu
 " Motions
 Plugin 'scrooloose/nerdcommenter'        " leader c{c,u} to comment/uncomment
 Plugin 'tpope/vim-surround'              " press cs({ to change parens to brackets
-Plugin 'Lokaltog/vim-easymotion'         " press leader-leader then motion
+"Plugin 'Lokaltog/vim-easymotion'         " press leader-leader then motion
 Plugin 'mattn/emmet-vim'                 " zencoding motions: <c-y>,
 
 " Widgets
@@ -36,7 +36,7 @@ Plugin 'scrooloose/syntastic'            " syntax/error checker
 Plugin 'christoomey/vim-tmux-navigator'  " CTRL+{h,j,k,l} betwen vim and tmux splits
 Plugin 'chrisbra/Recover.vim'            " show diff when recovering file
 Plugin 'tpope/vim-endwise'               " adds block-end keywords when opening blocks
-Plugin 'Valloric/YouCompleteMe'          " advanced completions, requires cmake and gc++
+"Plugin 'Valloric/YouCompleteMe'          " advanced completions, requires cmake and gc++
 Plugin 'flazz/vim-colorschemes'          " nice colors
 
 " filetypes

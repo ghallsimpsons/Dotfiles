@@ -14,7 +14,3 @@ bindkey '^[[B' down-line-or-search
 
 ##### load and style support for version control systems
 autoload -Uz add-zsh-hook
-
-#### LS Colors
-command-exists dircolors &&  eval $(dircolors  -b "$DOTFILES/lscolors/dircolors.zenburn.older")
-command-exists gdircolors && eval $(gdircolors -b "$DOTFILES/lscolors/dircolors.zenburn.older")

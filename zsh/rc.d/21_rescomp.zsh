@@ -4,7 +4,7 @@ if [[ "$HOSTNAME" == *rescomp.berkeley.edu ]] ; then
     ### Paths
     export SVNCODE="https://svn.rescomp.berkeley.edu/code"
     export SVNTMPL="https://svn.rescomp.berkeley.edu/marketing"
-    export CODE="/usr/code/jitl/"
+    export CODE="/usr/code/$USER/"
 
     ### PostgreSQL Database Access
     alias devdb='psql -h test-db -p 5433 rescomp'
