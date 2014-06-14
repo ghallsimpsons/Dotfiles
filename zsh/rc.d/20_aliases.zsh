@@ -20,8 +20,9 @@ done
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
+alias la='ls -ACF'
 alias l='ls -CF'
+alias ls='ls -CF'
 
 # Settings shortcuts
 typeset -A settings_files
@@ -41,29 +42,12 @@ done
 [[ -f "$ZSH_FILES/hosts/$HOSTNAME" ]] && alias hostsettings="$EDITOR $ZSH_FILES/hosts/$HOSTNAME"
 alias resource="source ~/.zshrc"
 
-
-# rdesktop
-alias remote="rdesktop -u just.jake -g 1280x768 remote.housing.berkeley.edu"
-
-#### SSH
-alias unlock="
-    ssh-add ~/.ssh/id_rsa.wopr
-    ssh -N stargate.housing.berkeley.edu
-"
-
-
 typeset -A ssh_hosts
 ssh_hosts=(
 # rescomp
 hal         "hal.rescomp.berkeley.edu"
 irc         "irc.housing.berkeley.edu"
-architect   "thearchitect.rescomp.berkeley.edu"
-devbox      "dev-www14.rescomp.berkeley.edu"
 stargate    "stargate.housing.berkeley.edu"
-
-# personal
-tonic       "tonic.teton-landis.org"
-armada      "armada.systems"
 )
 for short in ${(k)ssh_hosts}; do
     alias $short="ssh $ssh_hosts[$short]"
@@ -72,6 +56,18 @@ done
 ### Rescomp Dev hosts
 for n in {1..15} ; do
     alias dev$n="ssh dev-www$n.rescomp.berkeley.edu"
+done
+    alias mydev="ssh dev-$USER.rescomp.berkeley.edu"
+
+    alias wifi1="ssh dev-wifi-aux.rescomp.berkeley.edu"
+    alias wifi2="ssh wifi-aux-0.rescomp.berkeley.edu"
+    alias aux="ssh dev-aux.rescomp.berkeley.edu"
+    
+###I call your bash hax and raise you a stupid
+### => alias ...='cd ../../'
+for n in {1,8} ; do
+    eval alias `printf '.%.0s' $(eval "echo {1.."$((n))"}")`=\
+    `"'"cd `printf '../%.0s' $eval "echo {1.."$(($n-1))"}")`"'";
 done
 
 # tmux config: https://github.com/adnichols/tmux_setup
