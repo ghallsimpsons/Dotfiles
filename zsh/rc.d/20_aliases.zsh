@@ -62,13 +62,17 @@ done
     alias wifi1="ssh dev-wifi-aux.rescomp.berkeley.edu"
     alias wifi2="ssh wifi-aux-0.rescomp.berkeley.edu"
     alias aux="ssh dev-aux.rescomp.berkeley.edu"
+    alias carver="ssh ghall@carver.nersc.gov"
+    alias hopper="ssh ghall@hopper.nersc.gov"
+    alias ceviche="ssh grantlandhall@ceviche.berkeley.edu"
+    alias tmux='tmux -2'
     
 ###I call your bash hax and raise you a stupid
 ### => alias ...='cd ../../'
-for n in {1,8} ; do
-    eval alias `printf '.%.0s' $(eval "echo {1.."$((n))"}")`=\
-    `"'"cd `printf '../%.0s' $eval "echo {1.."$(($n-1))"}")`"'";
-done
+#for n in {1,8} ; do
+#    eval alias `printf '.%.0s' $(eval "echo {1.."$((n))"}")`="'"cd `printf '../%.0s' $(eval "echo {1.."$(($n-1))"}")`"'";
+#done
+#BROKEN TODO: FIX
 
 # tmux config: https://github.com/adnichols/tmux_setup
 alias fixssh="source ~/bin/fixssh"

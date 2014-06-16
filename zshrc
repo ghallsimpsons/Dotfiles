@@ -63,3 +63,4 @@ done
 #### Host Settings
 [[ -f "$ZSH_FILES/hosts/`hostname`" ]] && source "$ZSH_FILES/hosts/`hostname`"
 [[ -f "$ZSH_FILES/hosts/`hostname`.zsh" ]] && source "$ZSH_FILES/hosts/`hostname`.zsh"
+[[ -f "$HOME/.zsh.local" ]] && source "$HOME/.zsh.local"
