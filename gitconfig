@@ -1,7 +1,7 @@
 # git config
 [user]
-	name = Zach Schneider
-	email = zschneider@berkeley.edu
+	name = Grantland Hall
+	email = grantlandhall@berkeley.edu
 [color]
 	diff = auto
 	status = auto
@@ -21,4 +21,4 @@
 [core]
 	excludesfile = ~/.dotfiles/gitignore_global
 [github]
-	user = zschneider
+	user = ghallsimpsons
