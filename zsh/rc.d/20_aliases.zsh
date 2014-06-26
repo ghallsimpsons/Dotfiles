@@ -5,8 +5,16 @@
 # ls and grep differs in FreeBSD and Linux
 if [[ FreeBSD == $(uname) || Darwin == $(uname) ]] ; then
         alias ls='ls -G'
+        alias ll='ls -alFG'
+        alias la='ls -ACFG'
+        alias l='ls -CFG'
+        alias ls='ls -CFG'
 else
         alias ls='ls --color'
+        alias ll='ls -alF --color'
+        alias la='ls -ACF --color'
+        alias l='ls -CF --color'
+        alias ls='ls -CF --color'
         grep_options="--color=auto --exclude-dir='.svn'"
 fi
 
@@ -17,12 +25,6 @@ alias mutt="mutt -y"
 for grep_type in grep fgrep egrep ; do
     alias $grep_type="$grep_type $grep_options"
 done
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -ACF'
-alias l='ls -CF'
-alias ls='ls -CF'
 
 # Settings shortcuts
 typeset -A settings_files
