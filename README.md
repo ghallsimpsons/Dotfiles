@@ -1,6 +1,6 @@
-# Zach's Dotfiles
+# $USER's Dotfiles
 
-Because I need them somewhere.
+Because people keep cloning this repo
 
 ## Installation
 
