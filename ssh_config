@@ -31,10 +31,10 @@ Host ceviche
     HostName ceviche.berkeley.edu
 
 Host nibiru
-    HostName 128.32.240.47
+    HostName nibiru.physics.berkeley.edu
 
 Host bolowiki
     HostName bolowiki.berkeley.edu
 
 Host fiesta
-    HostName 128.32.240.182
+    HostName fiesta.berkeley.edu
