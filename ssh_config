@@ -1,3 +1,6 @@
+Host *
+    User grantlandhall
+
 # Rescomp Hosts
 
 Host irc irc.housing.berkeley.edu
@@ -23,3 +26,15 @@ Host resgit
     User gitolite3
     IdentityFile ~/.ssh/id_rsa_git
 
+# PB Hosts
+Host ceviche
+    HostName ceviche.berkeley.edu
+
+Host nibiru
+    HostName nibiru.physics.berkeley.edu
+
+Host bolowiki
+    HostName bolowiki.berkeley.edu
+
+Host fiesta
+    HostName fiesta.berkeley.edu

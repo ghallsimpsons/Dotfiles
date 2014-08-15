@@ -257,3 +257,6 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
+nnoremap qq :q<RETURN>
+":E => Execute current file
+command E !%:p  
