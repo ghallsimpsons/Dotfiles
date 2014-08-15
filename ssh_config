@@ -38,3 +38,17 @@ Host bolowiki
 
 Host fiesta
     HostName fiesta.berkeley.edu
+
+Host pbdata
+    HostName pbdata.berkeley.edu
+
+Host pbfs
+    HostName pbfs.berkeley.edu
+
+Host carver
+    HostName carver.nersc.gov
+    User ghall
+
+Host hopper
+    HostName hopper.nersc.gov
+    User ghall
