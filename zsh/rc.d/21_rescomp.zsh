@@ -1,6 +1,6 @@
 ### Aliases for rescomp machines
 
-if [[ "$HOSTNAME" == *rescomp.berkeley.edu ]] ; then
+if [[ "$HOSTNAME" == *rescomp.berkeley.edu || "$HOSTNAME" == *housing.berkeley.edu ]] ; then
     ### Paths
     export SVNCODE="https://svn.rescomp.berkeley.edu/code"
     export SVNTMPL="https://svn.rescomp.berkeley.edu/marketing"
