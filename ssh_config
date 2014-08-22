@@ -31,6 +31,7 @@ Host ceviche
     HostName ceviche.berkeley.edu
 
 Host nibiru
+    User root
     HostName nibiru.physics.berkeley.edu
 
 Host bolowiki
