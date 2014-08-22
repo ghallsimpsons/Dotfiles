@@ -40,10 +40,10 @@ Host fiesta
     HostName fiesta.berkeley.edu
 
 Host pbdata
-    HostName pbdata.berkeley.edu
+    HostName pbdata.physics.berkeley.edu
 
 Host pbfs
-    HostName pbfs.berkeley.edu
+    HostName pbfs.physics.berkeley.edu
 
 Host carver
     HostName carver.nersc.gov
