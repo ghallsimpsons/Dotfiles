@@ -1,6 +1,3 @@
-Host *
-    User grantlandhall
-
 # Rescomp Hosts
 
 Host irc irc.housing.berkeley.edu
@@ -53,3 +50,7 @@ Host carver
 Host hopper
     HostName hopper.nersc.gov
     User ghall
+
+# Default username
+Host *
+    User grantlandhall
