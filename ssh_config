@@ -54,3 +54,4 @@ Host hopper
 # Default username
 Host *
     User grantlandhall
+    IdentityFile ~/.ssh/id_rsa
