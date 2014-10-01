@@ -1,0 +1,11 @@
+command x wq
+nnoremap ss :emenu Tools.Web Developer.FireSSH<RETURN>
+nnoremap qq :q<RETURN>
+nnoremap j 3j
+nnoremap k 3k
+nnoremap gh <C-p>
+nnoremap gl <C-n>
+set tabnumbers
+nnoremap dd d;
+nnoremap <C-h> <C-p>
+nnoremap <C-l> <C-n>

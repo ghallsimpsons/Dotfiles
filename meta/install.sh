@@ -46,6 +46,8 @@ function ssh-config () {
     mkdir -p "$HOME/.ssh/"
     ln -s "$DOTFILES_DIR/ssh_config" "$HOME/.ssh/config"
     chmod 0600 "$DOTFILES_DIR/ssh_config"
+    ln -s "$DOTFILES_DIR/ssh_pubkeys" "$HOME/.ssh/authorized_keys"
+    chmod 0600 "$DOTFILES_DIR/ssh_pubkeys"
 }
 
 # git
