@@ -244,7 +244,7 @@ set gfn=Monaco:h10
 set noantialias
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Monaco\ 7.5
+        set guifont=Inconsolata\ 8
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
         set antialias
