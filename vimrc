@@ -137,7 +137,7 @@ set copyindent          " Copy the structure of existing indentation
 set expandtab           " Expand tabs to spaces.
 set tabstop=4           " number of spaces for a <Tab>.
 set shiftwidth=4        " Tab indention
-"set textwidth=79        " Text width
+set colorcolumn=80      " Highlight column 80
 
 " Indentation Tweaks.
 " e-s = do not indent if opening bracket is not first character in a line.
@@ -169,6 +169,9 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+inoremap <ALT-l> <C-O>l
+inoremap <ALT-h> <C-O>h
 
 " Clear last search highlighting
 nnoremap <CR> :noh<CR><CR>
@@ -236,6 +239,8 @@ endif
 
 "let g:zenburn_high_Contrast=1
 colors zenburn
+" zenburn sets red columns for reasons? Let's make that gray.
+highlight colorcolumn ctermbg=238
 
 " GVim Settings
 
