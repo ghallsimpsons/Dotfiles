@@ -170,6 +170,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+inoremap <ALT-l> <C-O>l
+inoremap <ALT-h> <C-O>h
+
 " Clear last search highlighting
 nnoremap <CR> :noh<CR><CR>
 
