@@ -1,12 +1,14 @@
 # Rescomp Hosts
 
 Host irc irc.housing.berkeley.edu
+    Hostname irc.housing.berkeley.edu
     DynamicForward 9001
 
-Host *.rescomp.berkeley.edu *.housing.berkeley.edu
-    IdentityFile ~/.ssh/id_rsa.wopr
+Host hal
+    Hostname hal.rescomp.berkeley.edu
 
-Host stargate stargate.housing.berkeley.edu cardiff
+Host stargate
+    Hostname stargate.housing.berkeley.edu
     ForwardAgent yes
 
 # Bastion rescomp hosts
@@ -19,13 +21,13 @@ Host dev-* architect pythondev
 Host resgit
     Hostname git.rescomp.berkeley.edu
     User gitolite3
-    IdentityFile ~/.ssh/id_rsa_git
+    IdentityFile ~/.ssh/id_rsa
 
 # PB Hosts
 Host ceviche
     HostName ceviche.berkeley.edu
 
-Host nibiru
+Host nibiru nibiru.physics.berkeley.edu
     User root
     HostName nibiru.physics.berkeley.edu
 
@@ -41,11 +43,11 @@ Host pbdata
 Host pbfs
     HostName pbfs.physics.berkeley.edu
 
-Host carver
+Host carver carver.nersc.gov
     HostName carver.nersc.gov
     User ghall
 
-Host hopper
+Host hopper hopper.nersc.gov
     HostName hopper.nersc.gov
     User ghall
 
