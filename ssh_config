@@ -8,8 +8,6 @@ Host *.rescomp.berkeley.edu *.housing.berkeley.edu
 
 Host stargate stargate.housing.berkeley.edu cardiff
     ForwardAgent yes
-    ControlPath ~/.ssh/controlmasters/%r@%h:%p
-    ControlMaster auto
 
 # Bastion rescomp hosts
 Host dev-* architect pythondev
