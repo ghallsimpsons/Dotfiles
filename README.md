@@ -2,6 +2,14 @@
 
 Because people keep cloning this repo
 
+## Pre-Deployment
+
+If you've just cloned this repo, there are a few important things you should do **before** deploying.
+Edit your gitconfig to reflect your own credentials, including your name.
+Please, unless you work at AT&T and have the ability to reduce my phone bill, **do not** deploy
+my ssh_pubkeys. If you do, I will quietly weep, then ssh into your box and install a rootkit.
+You have been warned.
+
 ## Installation
 
 There's a really simple install script in `meta/install.sh` that links

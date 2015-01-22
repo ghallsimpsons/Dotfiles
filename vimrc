@@ -137,7 +137,9 @@ set copyindent          " Copy the structure of existing indentation
 set expandtab           " Expand tabs to spaces.
 set tabstop=4           " number of spaces for a <Tab>.
 set shiftwidth=4        " Tab indention
-set colorcolumn=80      " Highlight column 80
+if exists('+colorcolumn')
+    set colorcolumn=80  " Highlight column 80
+endif
 
 " Indentation Tweaks.
 " e-s = do not indent if opening bracket is not first character in a line.
@@ -249,7 +251,7 @@ set gfn=Monaco:h10
 set noantialias
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Monaco\ 7.5
+        set guifont=Inconsolata\ 8
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
         set antialias

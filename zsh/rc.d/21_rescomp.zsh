@@ -7,7 +7,7 @@ if [[ "$HOSTNAME" == *rescomp.berkeley.edu || "$HOSTNAME" == *housing.berkeley.e
     export CODE="/usr/code/$USER/"
 
     ### PostgreSQL Database Access
-    alias devdb='psql -h test-db -p 5433 rescomp'
+    alias devdb='psql -h code -p 5432 rescomp'
     #For dev-cc, ssh into hal then dev-cougar first.
     #alias devcc='psql -h dev-sal -p 5432 cc'
     alias testdb='psql -h test-db -p 5432 rescomp'
