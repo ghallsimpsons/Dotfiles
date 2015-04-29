@@ -204,6 +204,7 @@ if has("spell")
 endif
 
 au BufNewFile,BufRead *.hn setf yacc
+au BufNewFile,BufRead *.upc set filetype=c
 
 " Makefiles don't like spaces
 au FileType make set noexpandtab
