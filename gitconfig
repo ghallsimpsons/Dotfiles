@@ -22,5 +22,3 @@
 	excludesfile = ~/.dotfiles/gitignore_global
 [github]
 	user = ghallsimpsons
-[push]
-	default = simple
