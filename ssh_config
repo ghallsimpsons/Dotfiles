@@ -51,6 +51,9 @@ Host hopper hopper.nersc.gov
     HostName hopper.nersc.gov
     User ghall
 
+Host pbkaos pbkaos.physics.berkeley.edu
+    HostName pbkaos.physics.berkeley.edu
+
 # Default username
 Host *
     User grantlandhall
