@@ -51,6 +51,10 @@ Host hopper hopper.nersc.gov
     HostName hopper.nersc.gov
     User ghall
 
+Host stampede stampede.tacc.utexas.edu
+    HostName stampede.taxx.utexas.edu
+    User ghall
+
 Host pbkaos pbkaos.physics.berkeley.edu
     HostName pbkaos.physics.berkeley.edu
 
