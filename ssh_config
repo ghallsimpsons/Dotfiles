@@ -11,13 +11,6 @@ Host stargate
     Hostname stargate.housing.berkeley.edu
     ForwardAgent yes
 
-# Bastion rescomp hosts
-Host dev-* architect pythondev
-    ProxyCommand ssh stargate.housing.berkeley.edu nc %h %p
-    ForwardAgent yes
-    DynamicForward 9001
-
-
 Host resgit
     Hostname git.rescomp.berkeley.edu
     User gitolite3
@@ -52,7 +45,7 @@ Host hopper hopper.nersc.gov
     User ghall
 
 Host stampede stampede.tacc.utexas.edu
-    HostName stampede.taxx.utexas.edu
+    HostName stampede.tacc.utexas.edu
     User ghall
 
 Host pbkaos pbkaos.physics.berkeley.edu

@@ -34,6 +34,8 @@ screenrc
 
 vim
 vimrc
+
+psqlrc
 )
 
 # hide command output

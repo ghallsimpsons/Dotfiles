@@ -1,8 +1,11 @@
-if [[ ! -S $SSH_AUTH_SOCK ]]
-then
-    eval `ssh-agent` >/dev/null
-fi
-if ! ssh-add -l >/dev/null
-then
-    ssh-add >/dev/null
-fi
+unalias ssh-add
+ssh (){
+    if [[ -z "$SSH_AUTH_SOCK" || -z "$SSH_AGENT_PID" ]]; then
+        eval `ssh-agent`;
+    fi
+    ssh-add -l >/dev/null;
+    if [ ! $? ]; then
+        ssh-add ~/.ssh/id_rsa;
+    fi
+    /usr/bin/ssh -A $@;
+}
