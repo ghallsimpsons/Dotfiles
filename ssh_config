@@ -58,6 +58,11 @@ Host stampede stampede.tacc.utexas.edu
 Host pbkaos pbkaos.physics.berkeley.edu
     HostName pbkaos.physics.berkeley.edu
 
+# MadScience Hosts
+Host hellmouth hellmouth.madscience.institute
+    HostName hellmouth.madscience.institute
+    User root
+
 # Default username
 Host *
     User grantlandhall
