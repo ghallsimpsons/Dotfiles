@@ -59,17 +59,14 @@ done
 for n in {1..15} ; do
     alias dev$n="ssh dev-www$n.rescomp.berkeley.edu"
 done
-    alias mydev="ssh dev-$USER.rescomp.berkeley.edu"
-
-    alias wifi1="ssh dev-wifi-aux.rescomp.berkeley.edu"
-    alias wifi2="ssh wifi-aux-0.rescomp.berkeley.edu"
-    alias aux="ssh dev-aux.rescomp.berkeley.edu"
+    alias bsd='ssh dev-grantlandhall-bsd.rescomp.berkeley.edu'
+    alias rel='ssh dev-grantlandhall-rel.rescomp.berkeley.edu'
+    alias proxy='ssh dev-hoth.rescomp.berkeley.edu'
     alias carver="ssh ghall@carver.nersc.gov"
     alias hopper="ssh ghall@hopper.nersc.gov"
     alias ceviche="ssh grantlandhall@ceviche.berkeley.edu"
     alias tmux='tmux -2'
     
-###I call your bash hax and raise you a stupid
 ### => alias ...='cd ../../'
 #for n in {1,8} ; do
 #    eval alias `printf '.%.0s' $(eval "echo {1.."$((n))"}")`="'"cd `printf '../%.0s' $(eval "echo {1.."$(($n-1))"}")`"'";

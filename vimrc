@@ -186,6 +186,11 @@ nnoremap QQ :qa<CR>
 
 " Toggle paste mode.
 set pastetoggle=<F12>
+
+" Hex edit mode.
+nnoremap <leader>x :%!xxd<CR><CR>
+nnoremap <leader>a :%!xxd -r<CR><CR>
+
 "
 " =============================================================================
 "                                Filetype Stuff
