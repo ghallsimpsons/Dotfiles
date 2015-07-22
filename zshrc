@@ -7,15 +7,15 @@
 
 # Check for updates
 pushd ~/.dotfiles >/dev/null
-git fetch origin >/dev/null
+git fetch origin &>/dev/null
 if [[ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]];
 then
-    echo "Your dotfiles aren't up to date\! Would you"
+    echo "Your dotfiles aren't up to date! Would you"
     echo "like to update them now? (y/n)"
     read update
     if [[ $update =~ y ]];
     then
-        git pull && echo "Updated successfully\!"
+        git pull && echo "Updated successfully!"
     fi
 fi
 # Back to where we were
