@@ -6,20 +6,23 @@
 # export all of these settings
 
 # Check for updates
-pushd ~/.dotfiles >/dev/null
-git fetch origin &>/dev/null
-if [[ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]];
+if [ $(which git 2>/dev/null) ];
 then
-    echo "Your dotfiles aren't up to date! Would you"
-    echo "like to update them now? (y/n)"
-    read update
-    if [[ $update =~ y ]];
+    pushd ~/.dotfiles >/dev/null
+    git fetch origin &>/dev/null
+    if [[ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]];
     then
-        git pull && echo "Updated successfully!"
+        echo "Your dotfiles aren't up to date! Would you"
+        echo "like to update them now? (y/n)"
+        read update
+        if [[ $update =~ y ]];
+        then
+            git pull && echo "Updated successfully!"
+        fi
     fi
+    # Back to where we were
+    popd >/dev/null
 fi
-# Back to where we were
-popd >/dev/null
 
 setopt ALL_EXPORT
 
