@@ -4,6 +4,26 @@
 # <just.1.jake@gmail.com>              Winter 2012 #
 ####################################################
 # export all of these settings
+
+# Check for updates
+if [ $(which git 2>/dev/null) ];
+then
+    pushd ~/.dotfiles >/dev/null
+    git fetch origin &>/dev/null
+    if [[ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]];
+    then
+        echo "Your dotfiles aren't up to date! Would you"
+        echo "like to update them now? (y/n)"
+        read update
+        if [[ $update =~ y ]];
+        then
+            git pull && echo "Updated successfully!"
+        fi
+    fi
+    # Back to where we were
+    popd >/dev/null
+fi
+
 setopt ALL_EXPORT
 
 MANSECT=1:1p:8:2:3:3p:4:5:6:7:9:0p:n:l:o
