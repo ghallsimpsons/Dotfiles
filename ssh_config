@@ -9,6 +9,7 @@ Host hal
 
 Host stargate
     Hostname stargate.housing.berkeley.edu
+    DynamicForward 9001
     ForwardAgent yes
 
 Host resgit
