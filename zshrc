@@ -5,8 +5,9 @@
 ####################################################
 # export all of these settings
 
-# Check for updates
-if [ $(which git 2>/dev/null) ];
+# Check for updates if git is installed
+which git &>/dev/null
+if [ $? -eq 0 ];
 then
     pushd ~/.dotfiles >/dev/null
     git fetch origin &>/dev/null
