@@ -137,7 +137,9 @@ set copyindent          " Copy the structure of existing indentation
 set expandtab           " Expand tabs to spaces.
 set tabstop=4           " number of spaces for a <Tab>.
 set shiftwidth=4        " Tab indention
-set colorcolumn=80      " Highlight column 80
+if exists('+colorcolumn')
+    set colorcolumn=80  " Highlight column 80
+endif
 
 " Indentation Tweaks.
 " e-s = do not indent if opening bracket is not first character in a line.
@@ -184,6 +186,11 @@ nnoremap QQ :qa<CR>
 
 " Toggle paste mode.
 set pastetoggle=<F12>
+
+" Hex edit mode.
+nnoremap <leader>x :%!xxd<CR><CR>
+nnoremap <leader>a :%!xxd -r<CR><CR>
+
 "
 " =============================================================================
 "                                Filetype Stuff
@@ -202,6 +209,7 @@ if has("spell")
 endif
 
 au BufNewFile,BufRead *.hn setf yacc
+au BufNewFile,BufRead *.upc set filetype=c
 
 " Makefiles don't like spaces
 au FileType make set noexpandtab

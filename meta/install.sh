@@ -34,6 +34,8 @@ screenrc
 
 vim
 vimrc
+
+psqlrc
 )
 
 # hide command output
@@ -83,7 +85,7 @@ function dotfiles () {
     for file in "${DOTFILES[@]}"; do
         if [ ! -f "$HOME/${file}" ]; then
             echo "Linked .dotfiles/${file} -> ~/.${file}"
-            ln -s ".dotfiles/${file}" ".${file}"
+            ln -s "$DOTFILES_DIR/${file}" ".${file}"
         else
             echo "skipped because file exists: ~/.${file}"
         fi
@@ -91,6 +93,8 @@ function dotfiles () {
 
     # bundles dir is defaulty sourced in zshrc.d/02_bundles.zsh
     mkdir -p -v "$BUNDLES_DIR"
+    # Make a dummy file so bundles doesn't complain on login
+    touch $BUNDLES_DIR/dummy
 
     popd no-output
 }

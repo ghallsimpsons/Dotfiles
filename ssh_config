@@ -9,16 +9,8 @@ Host hal
 
 Host stargate
     Hostname stargate.housing.berkeley.edu
-    ForwardAgent yes
-    ControlPath ~/.ssh/controlmasters/%r@%h:%p
-    ControlMaster auto
-
-# Bastion rescomp hosts
-Host dev-* architect pythondev
-    ProxyCommand ssh stargate.housing.berkeley.edu nc %h %p
-    ForwardAgent yes
     DynamicForward 9001
-
+    ForwardAgent yes
 
 Host resgit
     Hostname git.rescomp.berkeley.edu
@@ -61,6 +53,18 @@ Host carver carver.nersc.gov
 Host hopper hopper.nersc.gov
     HostName hopper.nersc.gov
     User ghall
+
+Host stampede stampede.tacc.utexas.edu
+    HostName stampede.tacc.utexas.edu
+    User ghall
+
+Host pbkaos pbkaos.physics.berkeley.edu
+    HostName pbkaos.physics.berkeley.edu
+
+# MadScience Hosts
+Host hellmouth hellmouth.madscience.institute
+    HostName hellmouth.madscience.institute
+    User root
 
 # Default username
 Host *
