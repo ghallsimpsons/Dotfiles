@@ -36,8 +36,17 @@ Host nibiru nibiru.physics.berkeley.edu
 Host bolowiki
     HostName bolowiki.berkeley.edu
 
+Host pbkaos
+    HostName pbkaos.physics.berkeley.edu
+
 Host fiesta
     HostName fiesta.berkeley.edu
+
+Host pbkaos
+    HostName pbkaos.physics.berkeley.edu
+
+Host bistec
+    HostName bistec.berkeley.edu
 
 Host pbdata
     HostName pbdata.physics.berkeley.edu
