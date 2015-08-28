@@ -1,9 +1,5 @@
 # Rescomp Hosts
 
-Host irc irc.housing.berkeley.edu
-    Hostname irc.housing.berkeley.edu
-    DynamicForward 9001
-
 Host hal
     Hostname hal.rescomp.berkeley.edu
 
@@ -21,8 +17,7 @@ Host resgit
 Host ceviche
     HostName ceviche.berkeley.edu
 
-Host nibiru nibiru.physics.berkeley.edu
-    User root
+Host nibiru
     HostName nibiru.physics.berkeley.edu
 
 Host bolowiki
@@ -45,6 +40,10 @@ Host pbdata
 
 Host pbfs
     HostName pbfs.physics.berkeley.edu
+
+Host bolo
+    HostName bolo.berkeley.edu
+    Port 36
 
 Host carver carver.nersc.gov
     HostName carver.nersc.gov
