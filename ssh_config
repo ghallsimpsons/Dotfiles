@@ -45,6 +45,10 @@ Host bolo
     HostName bolo.berkeley.edu
     Port 36
 
+Host pbkaos pbkaos.physics.berkeley.edu
+    HostName pbkaos.physics.berkeley.edu
+
+# S00perComputers
 Host carver carver.nersc.gov
     HostName carver.nersc.gov
     User ghall
@@ -53,12 +57,13 @@ Host hopper hopper.nersc.gov
     HostName hopper.nersc.gov
     User ghall
 
+Host edison edison.nersc.gov
+    HostName edison.nersc.gov
+    User ghall
+
 Host stampede stampede.tacc.utexas.edu
     HostName stampede.tacc.utexas.edu
     User ghall
-
-Host pbkaos pbkaos.physics.berkeley.edu
-    HostName pbkaos.physics.berkeley.edu
 
 # MadScience Hosts
 Host hellmouth hellmouth.madscience.institute
@@ -68,4 +73,6 @@ Host hellmouth hellmouth.madscience.institute
 # Default username
 Host *
     User grantlandhall
+    ServerAliveInterval 300
+    ServerAliveCountMax 10
     IdentityFile ~/.ssh/id_rsa
