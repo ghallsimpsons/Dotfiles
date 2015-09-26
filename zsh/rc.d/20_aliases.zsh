@@ -5,13 +5,13 @@
 # ls and grep differs in FreeBSD and Linux
 if [[ FreeBSD == $(uname) || Darwin == $(uname) ]] ; then
         alias ls='ls -G'
-        alias ll='ls -alFG'
+        alias ll='ls -alhFG'
         alias la='ls -ACFG'
         alias l='ls -CFG'
         alias ls='ls -CFG'
 else
         alias ls='ls --color'
-        alias ll='ls -alF --color'
+        alias ll='ls -alhF --color'
         alias la='ls -ACF --color'
         alias l='ls -CF --color'
         alias ls='ls -CF --color'
