@@ -49,16 +49,20 @@ Host pbkaos pbkaos.physics.berkeley.edu
     HostName pbkaos.physics.berkeley.edu
 
 # S00perComputers
-Host carver carver.nersc.gov
-    HostName carver.nersc.gov
-    User ghall
-
 Host hopper hopper.nersc.gov
     HostName hopper.nersc.gov
     User ghall
 
 Host edison edison.nersc.gov
     HostName edison.nersc.gov
+    User ghall
+
+Host cori cori.nersc.gov
+    HostName cori.nersc.gov
+    User ghall
+
+Host babbage babbage.nersc.gov
+    HostName babbage.nersc.gov
     User ghall
 
 Host stampede stampede.tacc.utexas.edu
