@@ -7,19 +7,9 @@ if [[ "$HOSTNAME" == *rescomp.berkeley.edu || "$HOSTNAME" == *housing.berkeley.e
     export CODE="/usr/code/$USER/"
 
     ### PostgreSQL Database Access
-    alias devdb='psql -h code -p 5432 rescomp'
-    #For dev-cc, ssh into hal then dev-cougar first.
-    #alias devcc='psql -h dev-sal -p 5432 cc'
-    alias testdb='psql -h test-db -p 5432 rescomp'
+    alias devdb='psql -h dev-grantlandhall-db rescomp'
+    alias testdb='psql -h test-db rescomp'
     alias proddb='psql -h db rescomp'
-
-    ### Dev util
-    alias apacherl='sudo /usr/local/etc/rc.d/apache23 restart;sleep 5;sudo /usr/local/etc/rc.d/apache22 status'
-
-    ### Log Access
-    alias deverror='sudo /usr/bin/tail -f /var/log/httpd-error.log'
-    alias devaccess='sudo /usr/bin/tail -f /var/log/httpd-access.log'
-    #alias fixlogs='sudo /usr/local/etc/rc.d/syslog-ng restart'
 
     ### Webtree sync
     alias websync='sudo svn export --force $SVNTMPL/webtree/ /usr/local/www/rescomp/docs/'
