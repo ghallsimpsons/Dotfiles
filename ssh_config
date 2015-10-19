@@ -48,6 +48,9 @@ Host bolo
 Host pbkaos pbkaos.physics.berkeley.edu
     HostName pbkaos.physics.berkeley.edu
 
+Host gordita gordita.physics.berkeley.edu
+    HostName gordita.physics.berkeley.edu
+
 # S00perComputers
 Host hopper hopper.nersc.gov
     HostName hopper.nersc.gov
