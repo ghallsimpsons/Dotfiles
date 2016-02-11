@@ -29,6 +29,7 @@ Plugin 'tacahiroy/ctrlp-funky'           " find functions in ctrl-p
 Plugin 'scrooloose/nerdtree'             " files pane
 Plugin 'jistr/vim-nerdtree-tabs'         " NerdTree in all tabs
 Plugin 'bling/vim-airline'               " nifty vim statusline
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'edkolev/tmuxline.vim'            " vim statusline also in tmux, breaks things
 
 " Editor features
