@@ -97,7 +97,7 @@ function dotfiles () {
     touch $BUNDLES_DIR/dummy
 
     # Pull with https, push with ssh so no key needed on login
-    git remote add pull https://github.com/ghallsimpsons/Dotfiles
+    git remote add pull https://github.com/ghallsimpsons/Dotfiles -t master
     git remote set-url origin ssh://git@github.com:/ghallsimpsons/Dotfiles
     git config branch.master.pushRemote origin
     git config branch.master.remote pull
