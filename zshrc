@@ -10,7 +10,7 @@ which git &>/dev/null
 if [ $? -eq 0 ];
 then
     pushd ~/.dotfiles >/dev/null
-    git fetch origin &>/dev/null
+    git fetch pull &>/dev/null
     if [[ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]];
     then
         echo "Your dotfiles aren't up to date! Would you"
