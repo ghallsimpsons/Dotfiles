@@ -214,6 +214,8 @@ au BufNewFile,BufRead *.upc set filetype=c
 
 " Makefiles don't like spaces
 au FileType make set noexpandtab
+" Neither does Nathan
+au FileType cpp set noexpandtab
 
 " 2-space indents for some languages
 au FileType coffee set sw=2 ts=2
