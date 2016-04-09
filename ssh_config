@@ -45,6 +45,9 @@ Host pbkaos pbkaos.physics.berkeley.edu
 Host gordita gordita.physics.berkeley.edu
     HostName gordita.physics.berkeley.edu
 
+Host cilantro cilantro.physics.berkeley.edu
+    HostName cilantro.physics.berkeley.edu
+
 # S00perComputers
 Host edison edison.nersc.gov
     HostName edison.nersc.gov
