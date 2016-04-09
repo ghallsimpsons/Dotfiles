@@ -30,6 +30,17 @@ Suppress error messages
 .BR \-p
 Passthrough \fISTDIN\fR. This is useful for using txtnotify as an intermediate stage of a \fIpipe\fR.
 
+.SH CONFIGURATION
+To use txtnotify, you will first need to add your own Twilio credentials.
+In twiliorc, you must add \fIACCOUNTSID\fR and \fICALLERID\fR.
+You must also create your encrypted AUTHTOKEN.
+The token can be generated as follows (with gpg-agent running. See gpg(1) and gpg-agent(1)):
+.nf
+.RS
+echo "$AUTHTOKEN" | gpg -s --symmetric --cipher-algo AES256 --force-mdc > twilio.key
+.RE
+.fi
+
 .SH EXAMPLES
 .nf
 .RS

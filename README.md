@@ -6,6 +6,7 @@ Because people keep cloning this repo
 
 If you've just cloned this repo, there are a few important things you should do **before** deploying.
 Edit your gitconfig to reflect your own credentials, including your name.
+If you wish to use txtnotify, you will need to create a Twilio account and follow the configuration options in `txtnotify(1)`.
 Please, unless you work at AT&T and have the ability to reduce my phone bill, **do not** deploy
 my ssh_pubkeys. If you do, I will quietly weep, then ssh into your box and install a rootkit.
 You have been warned.
