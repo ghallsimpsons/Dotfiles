@@ -1,3 +1,4 @@
+#!/bin/bash
 function usage {
     echo "Usage: $0 [-t to-number] [-d callerid] [-q] [message]"
     exit 1
