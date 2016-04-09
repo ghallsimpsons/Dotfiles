@@ -1,0 +1,46 @@
+function usage {
+    echo "Usage: $0 [-t to-number] [-d callerid] [-q] [message]"
+    exit 1
+}
+
+while getopts ":t:d:q" opt; do
+    case "$opt" in
+        t) TO_NUMBER=$OPTARG;;
+        d) CALLERID=$OPTARG;;
+        q) QUIET=1;;
+        *) echo "Invalid argument: $opt"; usage;;
+    esac
+done
+
+if [ ! -f "$HOME/.twiliorc" ]; then
+    echo "Error: $HOME/.twiliorc not found"
+    exit 1
+fi
+
+if [ ! -f "$HOME/.twilio.key" ]; then
+    echo "Error: $HOME/.twilio.key not found"
+    exit 1
+fi
+
+. $HOME/.twiliorc
+
+if [ -z "$ACCOUNTSID" ]; then
+    echo "Error: .twiliorc must specify ACCOUNTSID"
+fi
+
+if [ -n "$TO_NUMBER" ]; then
+    TO=$TO_NUMBER
+fi
+
+if [ -z "$TO" ]; then
+    echo "Error: TO must be specified in .twiliorc or passed with -t."
+    usage
+fi
+
+MSG="Notification from $(hostname): ${@:OPTIND}"
+AUTHTOKEN=$(cat $HOME/.twilio.key)
+
+RESPONSE=$(curl -fSs -u "$ACCOUNTSID:$AUTHTOKEN" -d "From=$CALLERID" -d "To=$TO" -d "Body=$MSG" "https://api.twilio.com/2010-04-01/Accounts/$ACCOUNTSID/SMS/Messages" 2>&1)
+if [ $? -gt 0 -a -z "$QUIET" ]; then
+    echo "Failed to send SMS to $PHONE: $RESPONSE"
+fi

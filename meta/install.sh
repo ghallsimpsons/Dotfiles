@@ -103,6 +103,18 @@ function brew () {
     git clone "https://github.com/Homebrew/linuxbrew" "$BUNDLES_DIR/linuxbrew"
 }
 
+function txtnotify() {
+    pushd "$HOME" no-output
+    ln -nsf "$DOTFILES_DIR/twilio/twiliorc" ".twiliorc"
+    mkdir -p "bin"
+    ln -nsf "$DOTFILES_DIR/twilio/txtnotify" "$HOME/bin/txtnotify"
+    rehash
+    touch .twilio.key
+    chmod 600 .twilio.key
+    echo $(gpg --decrypt $DOTFILES_DIR/twilio/twilio.key 2>/dev/null) > .twilio.key
+    popd no-output
+}
+
 # make sure we param ok?
 if [ -z "$*" ]; then
     echo "$0 - error.
