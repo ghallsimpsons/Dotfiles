@@ -46,6 +46,7 @@ ZSH_FILES="$DOTFILES/zsh"
 # User Scripts Directory in Path
 ####
 PATH="$HOME/bin:$PATH"
+MANPATH="$(manpath):$HOME/man"
 
 #### History Settings
 HISTFILE="$HOME/.zsh/cache/`hostname`.zhistory"
