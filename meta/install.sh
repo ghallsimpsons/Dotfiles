@@ -112,10 +112,10 @@ function brew () {
 function txtnotify() {
     pushd "$HOME" no-output
     ln -nsf "$DOTFILES_DIR/twilio/twiliorc" ".twiliorc"
-    mkdir -p "bin"
-    mkdir -p "man/man1"
-    ln -nsf "$DOTFILES_DIR/twilio/txtnotify" "$HOME/bin/txtnotify"
-    ln -nsf "$DOTFILES_DIR/twilio/txtnotify.man" "$HOME/man/man1/txtnotify.1"
+    mkdir -p "local/bin"
+    mkdir -p "local/man/man1"
+    ln -nsf "$DOTFILES_DIR/twilio/txtnotify" "$HOME/local/bin/txtnotify"
+    ln -nsf "$DOTFILES_DIR/twilio/txtnotify.man" "$HOME/local/man/man1/txtnotify.1"
     rehash
     touch .twilio.key
     chmod 600 .twilio.key

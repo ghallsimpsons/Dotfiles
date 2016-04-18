@@ -41,13 +41,6 @@ LC_ALL='en_US.UTF-8'
 DOTFILES="$HOME/.dotfiles"
 ZSH_FILES="$DOTFILES/zsh"
 
-
-####
-# User Scripts Directory in Path
-####
-PATH="$HOME/bin:$PATH"
-MANPATH="$(manpath):$HOME/man"
-
 #### History Settings
 HISTFILE="$HOME/.zsh/cache/`hostname`.zhistory"
 HISTSIZE=130000
@@ -80,7 +73,12 @@ for config in "$ZSH_FILES/rc.d"/* ; do
     # echo "loading $config"
     source "$config"
 done
-# source "$ZSH_FILES"/zshrc.d/*
+
+####
+# User Scripts Directory in Path
+####
+prepend_to_path PATH "$HOME/local/bin"
+prepend_to_path MANPATH "$HOME/local/bin"
 
 #### Host Settings
 [[ -f "$ZSH_FILES/hosts/`hostname`" ]] && source "$ZSH_FILES/hosts/`hostname`"
