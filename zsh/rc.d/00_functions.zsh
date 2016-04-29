@@ -19,3 +19,19 @@ function this-script-dir {
 function expand-string {
     eval echo "$1"
 }
+
+# With two arguments, prepends the second argument to the path-like variable
+# in the first argument, if not present. With one argument, prepends to PATH.
+function prepend_to_path {
+    if [ -z "$2" ]; then
+        PATHVAR="PATH"
+        TO_PREPEND="$1"
+    else
+        PATHVAR="$1"
+        TO_PREPEND="$2"
+    fi
+    if [[ "${(P)PATHVAR}" =~ "(^|:)$TO_PREPEND(:|$)" ]]; then
+        return 0
+    fi
+    eval $PATHVAR="$TO_PREPEND:${(P)PATHVAR}"
+}

@@ -1,0 +1,59 @@
+.TH TXTNOTIFY 1
+.SH NAME
+txtnotify \- send SMS message via Twilio API
+
+.SH SYNOPSIS
+.B txtnotify
+[\fB\-t\fR \fITO\fR]
+[\fB\-d\fR \fICALLERID\fR]
+[\fB\-q\fR]
+[\fB\-p\fR]
+[\fImessage\fR]
+
+.SH DESCRIPTION
+.B txtnotify
+sends SMS text messages to a single recipient.
+
+.SH OPTIONS
+.TP
+.BR \-t " " \fITO\fR
+Phone number of recipient of SMS (XXX-XXX-XXXX).
+A default recipient can be specified by setting TO in the \fI.twiliorc\fR.
+.TP
+.BR \-d " " \fICALLERID\fR
+Number from which to send SMS. This must be a valid Twilio number.
+A default sender can be specified by setting CALLERID in the \fI.twiliorc\fR.
+.TP
+.BR \-q
+Suppress error messages
+.TP
+.BR \-p
+Passthrough \fISTDIN\fR. This is useful for using txtnotify as an intermediate stage of a \fIpipe\fR.
+
+.SH CONFIGURATION
+To use txtnotify, you will first need to add your own Twilio credentials.
+In twiliorc, you must add \fIACCOUNTSID\fR and \fICALLERID\fR.
+You must also create your encrypted AUTHTOKEN.
+The token can be generated as follows (with gpg-agent running. See gpg(1) and gpg-agent(1)):
+.nf
+.RS
+echo "$AUTHTOKEN" | gpg -s --symmetric --cipher-algo AES256 --force-mdc > twilio.key
+.RE
+.fi
+
+.SH EXAMPLES
+.nf
+.RS
+long-process | txtnotify -t "555-555-5555" "Finished\\!"
+.RE
+.fi
+.nf
+.RS
+long-process-with-output | txtnotify -q -p "Finished\\!" | less
+.RE
+.fi
+
+The above examples result in an SMS message with the content:
+.RS
+Notification from \fIhostname\fR: Finished!
+.RE
