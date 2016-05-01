@@ -3,14 +3,7 @@
 # Dotfiles/meta/install.sh
 # simple script to link my dotfiles into $HOME
 # @author Jake Teton-Landis <just.1.jake@gmail.com>
-#
-# Usage:
-# ~/.dotfiles/meta/install.sh [EXTRAS...]
-# where "extras" is any installation function defined here:
-#   - dotfiles:       the base dotfiles
-#   - submodules:     get all git submodules
-#   - ssh-config:     link my ssh-config into ~/.ssh/config
-#   - desktop-config: links in XDG_DESKTOP settings in ~/.config
+# @modified-by Grantland Hall <grantlandhall@berkeley.edu>
 ####
 
 set -e
@@ -83,7 +76,7 @@ function desktop-config () {
 function dotfiles () {
     pushd "$HOME" no-output
     for file in "${DOTFILES[@]}"; do
-        if [ ! -f "$HOME/${file}" ]; then
+        if [ ! -e "$HOME/.${file}" ]; then
             echo "Linked .dotfiles/${file} -> ~/.${file}"
             ln -s "$DOTFILES_DIR/${file}" ".${file}"
         else
@@ -96,11 +89,13 @@ function dotfiles () {
     # Make a dummy file so bundles doesn't complain on login
     touch $BUNDLES_DIR/dummy
 
+    pushd "$DOTFILES_DIR" no-output
     # Pull with https, push with ssh so no key needed on login
-    git remote add pull https://github.com/ghallsimpsons/Dotfiles -t master
-    git remote set-url origin ssh://git@github.com:/ghallsimpsons/Dotfiles
-    git config branch.master.pushRemote origin
-    git config branch.master.remote pull
+    git remote add pull https://github.com/ghallsimpsons/Dotfiles -t master 2>/dev/null || true
+    git remote set-url origin ssh://git@github.com:/ghallsimpsons/Dotfiles 2>/dev/null || true
+    git config branch.master.pushRemote origin 2>/dev/null || true
+    git config branch.master.remote pull 2>/dev/null || true
+    popd no-output
 
     popd no-output
 }
@@ -128,12 +123,13 @@ if [ -z "$*" ]; then
     echo "$0 - error.
 Usage:
 ~/.dotfiles/meta/install.sh [MODULES...]
-where 'extras' is any installation function defined here:
+where 'MODULES' are any of:
   - dotfiles:       the base dotfiles
   - submodules:     get all git submodules
-  - ssh-config:     link my ssh-config into ~/.ssh/config
+  - ssh-config:     link ssh-config into ~/.ssh/config
   - desktop-config: links in XDG_DESKTOP settings in ~/.config
-  - brew:           install linuxhomebrew"
+  - brew:           install linuxhomebrew
+  - txtnotify:      install txtnotify command and manpage"
     exit 1
 fi
 
