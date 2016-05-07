@@ -44,29 +44,8 @@ done
 [[ -f "$ZSH_FILES/hosts/$HOSTNAME" ]] && alias hostsettings="$EDITOR $ZSH_FILES/hosts/$HOSTNAME"
 alias resource="source ~/.zshrc"
 
-typeset -A ssh_hosts
-ssh_hosts=(
-# rescomp
-hal         "hal.rescomp.berkeley.edu"
-irc         "irc.housing.berkeley.edu"
-stargate    "stargate.housing.berkeley.edu"
-)
-for short in ${(k)ssh_hosts}; do
-    alias $short="ssh $ssh_hosts[$short]"
-done
+alias how_deep='echo $(($(ps | wc -l)-3))'
 
-### Rescomp Dev hosts
-for n in {1..15} ; do
-    alias dev$n="ssh dev-www$n.rescomp.berkeley.edu"
-done
-    alias bsd='ssh dev-grantlandhall-bsd.rescomp.berkeley.edu'
-    alias rel='ssh dev-grantlandhall-rel.rescomp.berkeley.edu'
-    alias proxy='ssh dev-hoth.rescomp.berkeley.edu'
-    alias carver="ssh ghall@carver.nersc.gov"
-    alias hopper="ssh ghall@hopper.nersc.gov"
-    alias ceviche="ssh grantlandhall@ceviche.berkeley.edu"
-    alias tmux='tmux -2'
-    
 ### => alias ...='cd ../../'
 #for n in {1,8} ; do
 #    eval alias `printf '.%.0s' $(eval "echo {1.."$((n))"}")`="'"cd `printf '../%.0s' $(eval "echo {1.."$(($n-1))"}")`"'";
