@@ -53,4 +53,5 @@ alias how_deep='echo $(($(ps | wc -l)-3))'
 #BROKEN TODO: FIX
 
 # tmux config: https://github.com/adnichols/tmux_setup
+alias tmux='tmux -2'
 alias fixssh="source ~/bin/fixssh"
