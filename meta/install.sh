@@ -119,7 +119,11 @@ function txtnotify() {
     rehash
     touch .twilio.key
     chmod 600 .twilio.key
-    echo $(gpg --decrypt $DOTFILES_DIR/twilio/twilio.key 2>/dev/null) > .twilio.key
+    if [ which gpg no-output ]; then
+        echo $(gpg --decrypt $DOTFILES_DIR/twilio/twilio.key 2>/dev/null) > .twilio.key
+    else
+        echo "Warning: GPG was not found. You must add your key manually to ~/.twilio.key" >&2
+    fi
     popd no-output
 }
 
