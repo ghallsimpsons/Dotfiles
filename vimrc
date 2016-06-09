@@ -39,6 +39,7 @@ Plugin 'chrisbra/Recover.vim'            " show diff when recovering file
 Plugin 'tpope/vim-endwise'               " adds block-end keywords when opening blocks
 "Plugin 'Valloric/YouCompleteMe'          " advanced completions, requires cmake and gc++
 Plugin 'flazz/vim-colorschemes'          " nice colors
+Plugin 'vim-scripts/Smart-Tabs'          " use spaces for alignment in c
 
 " filetypes
 Plugin 'vim-scripts/TWiki-Syntax'        " twiki, for vimperator mostly
@@ -61,9 +62,9 @@ filetype plugin indent on
 " =============================================================================
 
 " only open tree on big editor terms
-if &columns > 110
-    let g:nerdtree_tabs_open_on_console_startup=1
-endif
+"if &columns > 110
+"    let g:nerdtree_tabs_open_on_console_startup=1
+"endif
 
 " when creating/switching buffers
 set switchbuf=usetab,newtab
@@ -99,7 +100,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " =============================================================================
 
 set autoindent          " Copy indent from current line on starting a new line.
-"set smartindent         " And be smart about it
 set smarttab
 set backspace=indent,eol,start " Backspacing over everything in insert mode.
 set hidden              " Allow for putting dirty buffers in background.
@@ -112,10 +112,14 @@ set wildmode=longest,list,full " How to complete <Tab> matches.
 "set tildeop            " Makes ~ an operator.
 set virtualedit=block   " Support moving in empty space in block mode.
 set mouse=a             " Enables mouse usage (all modes)
-set magic               " Improves default search
 set autoread            " Prompt to reread a file if it changes
 set wrap                " Wraps long lines
 set scrolloff=5         " Always shows five lines of vertical context around the cursor
+
+" Be Magic. Be Very Magic
+nnoremap / /\v
+vnoremap / /\v
+cnoremap %s/ %smagic/
 
 " Low priority for these files in tab-completion.
 set suffixes+=.aux,.bbl,.blg,.dvi,.log,.pdf,.fdb_latexmk
@@ -215,7 +219,7 @@ au BufNewFile,BufRead *.upc set filetype=c
 " Makefiles don't like spaces
 au FileType make set noexpandtab
 " Neither does Nathan
-au FileType cpp set noexpandtab
+au FileType c,cpp,cxx,h,hpp set noexpandtab
 
 " 2-space indents for some languages
 au FileType coffee set sw=2 ts=2
@@ -253,6 +257,11 @@ colors zenburn
 " zenburn sets red columns for reasons? Let's make that gray.
 highlight colorcolumn ctermbg=238
 
+" Kill trailing whitespace dead
+:au InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+:au InsertLeave * match TrailingWhitespace /\s\+$/
+:highlight TrailingWhitespace ctermbg=250 guibg=250
+
 " GVim Settings
 
 " use monaco font
@@ -275,4 +284,4 @@ set guioptions-=L  "remove left-hand scroll bar
 
 nnoremap qq :q<RETURN>
 ":E => Execute current file
-command E !%:p  
+command E !%:p

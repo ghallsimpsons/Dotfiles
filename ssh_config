@@ -8,6 +8,11 @@ Host stargate
     DynamicForward 9001
     ForwardAgent yes
 
+Host cardiff
+    Hostname cardiff.rescomp.berkeley.edu
+    DynamicForward 9001
+    ForwardAgent yes
+
 Host resgit
     Hostname git.rescomp.berkeley.edu
     User gitolite3

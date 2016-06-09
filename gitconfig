@@ -24,3 +24,7 @@
 	user = ghallsimpsons
 [push]
     default = current
+[url "git@github.com:SouthPoleTelescope/"]
+    insteadOf = spt:
+[url "ssh://bolowiki:/pbrepo/"]
+    insteadOf = pb:

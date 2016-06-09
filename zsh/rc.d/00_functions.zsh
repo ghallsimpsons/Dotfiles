@@ -33,5 +33,5 @@ function prepend_to_path {
     if [[ "${(P)PATHVAR}" =~ "(^|:)$TO_PREPEND(:|$)" ]]; then
         return 0
     fi
-    eval $PATHVAR="$TO_PREPEND:${(P)PATHVAR}"
+    eval $PATHVAR=\"$TO_PREPEND:${(P)PATHVAR}\"
 }
