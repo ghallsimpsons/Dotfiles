@@ -214,10 +214,13 @@ if has("spell")
 endif
 
 au BufNewFile,BufRead *.hn setf yacc
-au BufNewFile,BufRead *.upc set filetype=c
+au BufNewFile,BufRead *.upc setf c
+au BufNewFile,BufRead *.cmake,CMakeLists.txt,*.cmake.in setf cmake
+au BufNewFile,BufRead *.ctest,*.ctest.in setf cmake
 
 " Makefiles don't like spaces
 au FileType make set noexpandtab
+au FileType cmake set noexpandtab
 " Neither does Nathan
 au FileType c,cpp,cxx,h,hpp set noexpandtab
 
