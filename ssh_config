@@ -70,6 +70,10 @@ Host stampede stampede.tacc.utexas.edu
     HostName stampede.tacc.utexas.edu
     User ghall
 
+Host odyssey login.rc.fas.harvard.edu
+    HostName login.rc.fas.harvard.edu
+    User ghall
+
 # MadScience Hosts
 Host hellmouth hellmouth.madscience.institute
     HostName hellmouth.madscience.institute
