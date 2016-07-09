@@ -258,12 +258,20 @@ endif
 "let g:zenburn_high_Contrast=1
 colors zenburn
 " zenburn sets red columns for reasons? Let's make that gray.
-highlight colorcolumn ctermbg=238
+if has("gui_running")
+    highlight colorcolumn guibg=238
+else
+    highlight colorcolumn ctermbg=238
+endif
 
 " Kill trailing whitespace dead
 :au InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
 :au InsertLeave * match TrailingWhitespace /\s\+$/
-:highlight TrailingWhitespace ctermbg=250 guibg=250
+if has("gui_running")
+    :highlight TrailingWhitespace guibg=250
+else
+    :highlight TrailingWhitespace ctermbg=250
+endif
 
 " GVim Settings
 
