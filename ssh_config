@@ -53,6 +53,11 @@ Host gordita gordita.physics.berkeley.edu
 Host cilantro cilantro.physics.berkeley.edu
     HostName cilantro.physics.berkeley.edu
 
+# Bicep Hosts
+Host spud find.spa.umn.edu
+    HostName find.spa.umn.edu
+    User ghall
+
 # S00perComputers
 Host edison edison.nersc.gov
     HostName edison.nersc.gov
