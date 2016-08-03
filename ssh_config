@@ -58,6 +58,23 @@ Host spud find.spa.umn.edu
     HostName find.spa.umn.edu
     User ghall
 
+# Harvard
+Host cfa login.cfa.harvard.edu
+    Host Name login.cfa.harvard.edu
+    ControlMaster auto
+    ControlPath ~/.ssh/controlmasters/%r@%h:%p
+    User ghall
+
+Host cfa0 cfa0.cfa.harvard.edu
+    HostName cfa0.cfa.harvard.edu
+    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
+    User ghall
+
+Host mars mars.cfa.harvard.edu
+    HostName mars.cfa.harvard.edu
+    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
+    User ghall
+
 # S00perComputers
 Host edison edison.nersc.gov
     HostName edison.nersc.gov
@@ -77,6 +94,7 @@ Host stampede stampede.tacc.utexas.edu
 
 Host odyssey login.rc.fas.harvard.edu
     HostName login.rc.fas.harvard.edu
+    ForwardX11 yes
     User ghall
 
 # MadScience Hosts
