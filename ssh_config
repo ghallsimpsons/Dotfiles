@@ -3,20 +3,9 @@
 Host hal
     Hostname hal.rescomp.berkeley.edu
 
-Host stargate
-    Hostname stargate.housing.berkeley.edu
-    DynamicForward 9001
-    ForwardAgent yes
-
 Host cardiff
     Hostname cardiff.rescomp.berkeley.edu
     DynamicForward 9001
-    ForwardAgent yes
-
-Host resgit
-    Hostname git.rescomp.berkeley.edu
-    User gitolite3
-    IdentityFile ~/.ssh/id_rsa
 
 # PB Hosts
 Host ceviche
@@ -24,9 +13,6 @@ Host ceviche
 
 Host nibiru
     HostName nibiru.physics.berkeley.edu
-
-Host bolowiki
-    HostName bolowiki.berkeley.edu
 
 Host fiesta
     HostName fiesta.berkeley.edu
@@ -40,12 +26,8 @@ Host bistec
 Host pbfs
     HostName pbfs.physics.berkeley.edu
 
-Host bolo bolo.berkeley.edu
+Host bolo bolowiki bolo.berkeley.edu
     HostName bolo.berkeley.edu
-    Port 36
-
-Host pbkaos pbkaos.physics.berkeley.edu
-    HostName pbkaos.physics.berkeley.edu
 
 Host gordita gordita.physics.berkeley.edu
     HostName gordita.physics.berkeley.edu
@@ -57,6 +39,10 @@ Host cilantro cilantro.physics.berkeley.edu
 Host spud find.spa.umn.edu
     HostName find.spa.umn.edu
     User ghall
+
+Host bicep0 bicep0.caltech.edu
+    HostName bicep0.caltech.edu
+    User bicep
 
 # Harvard
 Host cfa login.cfa.harvard.edu
@@ -74,6 +60,22 @@ Host mars mars.cfa.harvard.edu
     HostName mars.cfa.harvard.edu
     ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
     User ghall
+
+Host garlick garlick.cfa.harvard.edu
+    HostName garlick.cfa.harvard.edu
+    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
+    User ghall
+
+Host bicep52 131.142.152.95
+    HostName 131.142.152.95
+    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
+    ForwardX11 yes
+    User ghall
+
+Host bicep53 131.142.152.78
+    HostName 131.142.152.78
+    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
+    User bicep
 
 # S00perComputers
 Host edison edison.nersc.gov
@@ -108,3 +110,4 @@ Host *
     ServerAliveInterval 300
     ServerAliveCountMax 10
     IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
