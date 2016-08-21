@@ -66,16 +66,19 @@ Host garlick garlick.cfa.harvard.edu
     ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
     User ghall
 
-Host bicep52 131.142.152.95
-    HostName 131.142.152.95
+Host bicep51 bicep51.cfa.harvard.edu
+    HostName bicep51.cfa.harvard.edu
+
+Host bicep52 bicep52.cfa.harvard.edu
+    HostName bicep52.cfa.harvard.edu
+
+Host bicep53 bicep53.cfa.harvard.edu
+    HostName bicep53.cfa.harvard.edu
+
+Host bicep5*
     ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
     ForwardX11 yes
     User ghall
-
-Host bicep53 131.142.152.78
-    HostName 131.142.152.78
-    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
-    User bicep
 
 # S00perComputers
 Host edison edison.nersc.gov
