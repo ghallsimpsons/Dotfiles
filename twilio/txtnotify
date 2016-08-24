@@ -44,7 +44,7 @@ AUTHTOKEN=$(cat $HOME/.twilio.key)
 
 RESPONSE=$(curl -fSs -u "$ACCOUNTSID:$AUTHTOKEN" -d "From=$CALLERID" -d "To=$TO" -d "Body=$MSG" "https://api.twilio.com/2010-04-01/Accounts/$ACCOUNTSID/SMS/Messages" 2>&1)
 if [ $? -gt 0 -a -z "$QUIET" ]; then
-    echo "Failed to send SMS to $PHONE: $RESPONSE" >&2
+    echo "Failed to send SMS to $TO: $RESPONSE" >&2
 fi
 
 if [ -n "$PASSTHROUGH" ]; then
