@@ -57,3 +57,6 @@ The above examples result in an SMS message with the content:
 .RS
 Notification from \fIhostname\fR: Finished!
 .RE
+
+.SH FUN STUFF
+I use Automate for Android (Free!) to read notifications from Twilio aloud.
