@@ -102,7 +102,7 @@ Host odyssey login.rc.fas.harvard.edu
     ForwardX11 yes
     User ghall
 
-Host holy*.rc.fas.harvard.edu
+Host holy*
     User ghall
 
 # MadScience Hosts
