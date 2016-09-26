@@ -44,6 +44,19 @@ Host bicep0 bicep0.caltech.edu
     HostName bicep0.caltech.edu
     User bicep
 
+# At pole
+Host omega0 omega0.usap.gov
+    ProxyCommand ssh spud -W %h:%p
+    User ghall
+
+Host bicep3*
+    ProxyCommand ssh omega0 -W %h:%p
+    User bicep
+
+Host keck3*
+    ProxyCommand ssh omega0 -W %h:%p
+    User keck
+
 # Harvard
 Host cfa login.cfa.harvard.edu
     Host Name login.cfa.harvard.edu
@@ -66,17 +79,9 @@ Host garlick garlick.cfa.harvard.edu
     ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
     User ghall
 
-Host bicep51 bicep51.cfa.harvard.edu
-    HostName bicep51.cfa.harvard.edu
-
-Host bicep52 bicep52.cfa.harvard.edu
-    HostName bicep52.cfa.harvard.edu
-
-Host bicep53 bicep53.cfa.harvard.edu
-    HostName bicep53.cfa.harvard.edu
-
 Host bicep5*
     ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
+    HostName %h.cfa.harvard.edu
     ForwardX11 yes
     User ghall
 
