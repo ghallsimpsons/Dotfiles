@@ -107,6 +107,9 @@ Host odyssey login.rc.fas.harvard.edu
     ForwardX11 yes
     User ghall
 
+Host holy*
+    User ghall
+
 # MadScience Hosts
 Host hellmouth hellmouth.madscience.institute
     HostName hellmouth.madscience.institute
