@@ -1,12 +1,3 @@
-# Rescomp Hosts
-
-Host hal
-    Hostname hal.rescomp.berkeley.edu
-
-Host cardiff
-    Hostname cardiff.rescomp.berkeley.edu
-    DynamicForward 9001
-
 # PB Hosts
 Host ceviche
     HostName ceviche.berkeley.edu
