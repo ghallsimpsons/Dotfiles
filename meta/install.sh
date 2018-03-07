@@ -37,7 +37,8 @@ alias -g no-output=">/dev/null 2>&1"
 # ssh
 function ssh-config () {
     mkdir -p "$HOME/.ssh/controlmasters"
-    ln -s "$DOTFILES_DIR/ssh_config" "$HOME/.ssh/config"
+    # Keep working ssh config out of vcs and merge manually
+    cp "$DOTFILES_DIR/ssh_config" "$HOME/.ssh/config"
     chmod 0600 "$DOTFILES_DIR/ssh_config"
     ln -s "$DOTFILES_DIR/ssh_pubkeys" "$HOME/.ssh/authorized_keys"
     chmod 0600 "$DOTFILES_DIR/ssh_pubkeys"
