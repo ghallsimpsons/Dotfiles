@@ -29,7 +29,7 @@ function jake-precmd {
 
 # preexec is called just before any command line is executed
 function jake-preexec() {
-  title "$1" "$TITLE_LOCATION"
+  title '$1' "$TITLE_LOCATION"
 }
 
 #### Add ZSH pre-command hook
