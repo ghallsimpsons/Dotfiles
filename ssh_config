@@ -1,39 +1,7 @@
 # PB Hosts
-Host ceviche
-    User grantlandhall
-    HostName ceviche.berkeley.edu
-
-Host nibiru
-    User grantlandhall
-    HostName nibiru.physics.berkeley.edu
-
-Host fiesta
-    User grantlandhall
-    HostName fiesta.berkeley.edu
-
-Host pbkaos
-    User grantlandhall
-    HostName pbkaos.physics.berkeley.edu
-
-Host bistec
-    User grantlandhall
-    HostName bistec.berkeley.edu
-
-Host pbfs
-    User grantlandhall
-    HostName pbfs.physics.berkeley.edu
-
 Host bolo bolowiki bolo.berkeley.edu
-    User grantlandhall
     HostName bolo.berkeley.edu
-
-Host gordita gordita.physics.berkeley.edu
     User grantlandhall
-    HostName gordita.physics.berkeley.edu
-
-Host cilantro cilantro.physics.berkeley.edu
-    User grantlandhall
-    HostName cilantro.physics.berkeley.edu
 
 # Bicep Hosts
 Host spud find.spa.umn.edu
@@ -46,7 +14,7 @@ Host bicep0 bicep0.caltech.edu
 # At pole
 Host omega0 omega0.usap.gov
     HostName omega0.usap.gov
-    #ProxyCommand ssh spud -W %h:%p
+    ProxyCommand ssh spud -W %h:%p
 
 Host wvr1
     ProxyCommand ssh omega0 -W %h:%p
@@ -100,9 +68,6 @@ Host edison edison.nersc.gov
 
 Host cori cori.nersc.gov
     HostName cori.nersc.gov
-
-Host babbage babbage.nersc.gov
-    HostName babbage.nersc.gov
 
 Host stampede stampede.tacc.utexas.edu
     HostName stampede.tacc.utexas.edu
