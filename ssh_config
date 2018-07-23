@@ -11,6 +11,9 @@ Host bicep0 bicep0.caltech.edu
     HostName bicep0.caltech.edu
     User bicep
 
+Host badaq1 badaq1.spa.umn.edu
+    HostName badaq1.spa.umn.edu
+
 # At pole
 Host omega0 omega0.usap.gov
     HostName omega0.usap.gov
