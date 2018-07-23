@@ -116,6 +116,8 @@ set mouse=a             " Enables mouse usage (all modes)
 set autoread            " Prompt to reread a file if it changes
 set wrap                " Wraps long lines
 set scrolloff=5         " Always shows five lines of vertical context around the cursor
+set splitbelow          " Open horizontal splits below current window
+set splitright          " Open vertical splits to right of current window
 
 " Be Magic. Be Very Magic
 nnoremap / /\v
