@@ -124,6 +124,23 @@ function txtnotify() {
     popd no-output
 }
 
+function vim() {
+    pushd "$HOME" no-output
+    mkdir -p "local/src"
+    if [ -d "local/src/vim" ]; then
+        pushd "local/src/vim" no-output
+        git pull
+    else
+        git clone "https://github.com/vim/vim" "local/src/vim"
+        pushd "local/src/vim" no-output
+    fi
+    ./configure --prefix=$HOME/local  --enable-cscope --enable-multibyte --with-features=huge
+    make -j$(nproc --all --ignore=1)
+    make install
+    popd no-output
+    popd no-output
+}
+
 # make sure we param ok?
 if [ -z "$*" ]; then
     echo "$0 - error.
