@@ -255,7 +255,7 @@ set t_Co=256            " We use 256 color terminal emulators these days.
 " Folding
 if version >= 600
     set foldenable
-    set foldmethod=marker
+    set foldmethod=syntax
 endif
 
 "let g:zenburn_high_Contrast=1
