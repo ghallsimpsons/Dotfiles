@@ -52,6 +52,7 @@ Plugin 'jakar/vim-json'                  " ft .json
 Plugin 'kchmck/vim-coffee-script'        " ft .coffee
 Plugin 'groenewege/vim-less'             " ft .less
 Plugin 'tfnico/vim-gradle'               " ft .gradle
+Plugin 'MatlabFilesEdition'              " Matlab
 
 " Needs to be executed after Vundle.
 call vundle#end()
