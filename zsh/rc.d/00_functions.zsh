@@ -35,3 +35,15 @@ function prepend_to_path {
     fi
     eval $PATHVAR=\"$TO_PREPEND:${(P)PATHVAR}\"
 }
+
+function vim {
+    echo $1
+    if [[ "$1" =~ ":" ]]; then
+        read -r FILE LINE ARGS < <(echo ${(s/:/)1})
+        if [ ! -f "$1" ] && [ -f "$FILE" ]; then
+            command vim +$LINE $FILE
+            return 0
+        fi
+    fi
+    command vim $@
+}
