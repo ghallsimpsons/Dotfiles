@@ -40,6 +40,7 @@ Plugin 'tpope/vim-endwise'               " adds block-end keywords when opening 
 "Plugin 'Valloric/YouCompleteMe'          " advanced completions, requires cmake and gc++
 Plugin 'flazz/vim-colorschemes'          " nice colors
 Plugin 'vim-scripts/Smart-Tabs'          " use spaces for alignment in c
+Plugin 'Conradirwin/vim-bracketed-paste'             " Automagically :set paste! when pasting
 
 " filetypes
 Plugin 'vim-scripts/TWiki-Syntax'        " twiki, for vimperator mostly
