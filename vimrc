@@ -123,7 +123,7 @@ set splitright          " Open vertical splits to right of current window
 " Be Magic. Be Very Magic
 nnoremap / /\v
 vnoremap / /\v
-cnoremap %s/ %smagic/
+cnoremap %s/ %s/\v
 
 " Low priority for these files in tab-completion.
 set suffixes+=.aux,.bbl,.blg,.dvi,.log,.pdf,.fdb_latexmk
