@@ -111,7 +111,7 @@ set smartcase           " Override ignorecase when searching uppercase.
 set incsearch           " Jumps to search word as you type.
 set modeline            " Enables modelines.
 set wildmode=longest,list,full " How to complete <Tab> matches.
-"set tildeop            " Makes ~ an operator.
+set tildeop             " Makes ~ an operator.
 set virtualedit=block   " Support moving in empty space in block mode.
 set mouse=a             " Enables mouse usage (all modes)
 set autoread            " Prompt to reread a file if it changes
