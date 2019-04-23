@@ -17,6 +17,9 @@ Host badaq1 badaq1.spa.umn.edu
 Host badaq2 badaq2.spa.umn.edu
     HostName badaq2.spa.umn.edu
 
+Host mce1
+    ProxyCommand ssh badaq2 -W %h:%p
+
 # UMN
 Host apollo apollo.cselabs.umn.edu
     ForwardX11 yes
