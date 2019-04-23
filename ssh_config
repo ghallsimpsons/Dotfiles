@@ -57,29 +57,6 @@ Host bicep30
 Host keck3*
     ProxyCommand ssh omega0 -W %h:%p
 
-# Harvard
-Host cfa login.cfa.harvard.edu
-    Host Name login.cfa.harvard.edu
-    ControlMaster auto
-    ControlPath ~/.ssh/controlmasters/%r@%h:%p
-
-Host cfa0 cfa0.cfa.harvard.edu
-    HostName cfa0.cfa.harvard.edu
-    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
-
-Host mars mars.cfa.harvard.edu
-    HostName mars.cfa.harvard.edu
-    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
-
-Host garlick garlick.cfa.harvard.edu
-    HostName garlick.cfa.harvard.edu
-    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
-
-Host bicep5*
-    ProxyCommand ssh login.cfa.harvard.edu -W %h:%p
-    HostName %h.cfa.harvard.edu
-    ForwardX11 yes
-
 # S00perComputers
 Host edison edison.nersc.gov
     HostName edison.nersc.gov
