@@ -16,6 +16,11 @@ Host badaq1 badaq1.spa.umn.edu
 
 Host badaq2 badaq2.spa.umn.edu
     HostName badaq2.spa.umn.edu
+    User badaq
+
+Match Host badaq2.spa.umn.edu exec "test $(eval ps -ho cmd $PPID | awk '{print $1}') = ssh"
+    RequestTTY yes
+    RemoteCommand HOME=/home/ghall tmux new-session -A -s grant
 
 Host mce1
     ProxyCommand ssh badaq2 -W %h:%p
