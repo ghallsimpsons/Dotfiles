@@ -72,8 +72,16 @@ Host cori cori.nersc.gov
 Host stampede stampede.tacc.utexas.edu
     HostName stampede.tacc.utexas.edu
 
-Host odyssey login.rc.fas.harvard.edu
-    HostName login.rc.fas.harvard.edu
+Host odyssey holybicep01
+    HostName holybicep01
+    ProxyCommand ssh odyssey_login -W %h:%p
+    ForwardX11 yes
+
+Host odyssey_login holylogin.rc.fas.harvard.edu
+    HostName holylogin.rc.fas.harvard.edu
+    ControlMaster auto
+    ControlPath ~/.ssh/controlmasters/%r@%h:%p
+    ProxyCommand ssh spud -W %h:%p
     ForwardX11 yes
 
 # MadScience Hosts
