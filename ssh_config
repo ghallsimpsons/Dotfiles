@@ -27,6 +27,7 @@ Match Host badaq.spa.umn.edu exec "test $(eval ps -ho cmd $PPID | awk '{print $1
 
 Host bamce*
     User badaq
+    ForwardX11 yes
     ProxyJump omega1
 
 Host bahk
@@ -42,6 +43,13 @@ Host apollo apollo.cselabs.umn.edu
 Host atlas atlas.cselabs.umn.edu
     ForwardX11 yes
     HostName atlas.cselabs.umn.edu
+
+# Workstations
+Host spudws*
+    ProxyJump spud
+
+Host baws*
+    ProxyJump omega1
 
 # At pole
 Host omega0 omega0.usap.gov
