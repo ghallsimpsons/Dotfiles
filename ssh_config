@@ -5,6 +5,7 @@ Host bolo bolowiki bolo.berkeley.edu
 
 # Bicep Hosts
 Host spud find.spa.umn.edu
+    ForwardX11 yes
     HostName find.spa.umn.edu
 
 Host omega1 omega0.spa.umn.edu
