@@ -37,7 +37,7 @@ Plugin 'scrooloose/syntastic'            " syntax/error checker
 Plugin 'christoomey/vim-tmux-navigator'  " CTRL+{h,j,k,l} betwen vim and tmux splits
 Plugin 'chrisbra/Recover.vim'            " show diff when recovering file
 Plugin 'tpope/vim-endwise'               " adds block-end keywords when opening blocks
-"Plugin 'Valloric/YouCompleteMe'          " advanced completions, requires cmake and gc++
+Plugin 'Valloric/YouCompleteMe'          " advanced completions, requires cmake and gc++
 Plugin 'flazz/vim-colorschemes'          " nice colors
 Plugin 'vim-scripts/Smart-Tabs'          " use spaces for alignment in c
 Plugin 'Conradirwin/vim-bracketed-paste'             " Automagically :set paste! when pasting
