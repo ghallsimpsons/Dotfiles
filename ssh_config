@@ -91,20 +91,10 @@ Host stampede stampede.tacc.utexas.edu
     HostName stampede.tacc.utexas.edu
 
 Host odyssey holybicep01
-    HostName holybicep01
-    ProxyJump spud_int
-    ForwardX11 yes
-
-Host spud_int
-    # First proxy to spud, then bind to localhost:9999
-    ProxyJump spud
     HostName localhost
-    Port 9999
-
-# Run on spud
-Host odyssey_login holylogin.rc.fas.harvard.edu
-    HostName holylogin.rc.fas.harvard.edu
-    LocalForward localhost:9999 holybicep01:22
+    ProxyJump spud
+    Port 9998
+    ForwardX11 yes
 
 # MadScience Hosts
 Host hellmouth hellmouth.madscience.institute
