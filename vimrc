@@ -231,6 +231,7 @@ au FileType c,cpp,cxx,h,hpp set noexpandtab
 au FileType coffee set sw=2 ts=2
 au FileType ruby set sw=2 ts=2
 au FileType java set sw=2 ts=2
+au FileType html set sw=2 ts=2
 
 " fucking textwrap in go? get out
 au FileType go set textwidth=0 wrapmargin=0
