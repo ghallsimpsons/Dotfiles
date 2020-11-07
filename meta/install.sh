@@ -134,7 +134,7 @@ function vim() {
         git clone "https://github.com/vim/vim" "local/src/vim"
         pushd "local/src/vim" no-output
     fi
-    ./configure --prefix=$HOME/local  --enable-cscope --enable-multibyte --with-features=huge
+    ./configure --prefix=$HOME/local  --enable-cscope --enable-multibyte --with-features=huge --enable-python3interp
     make -j$(nproc --all --ignore=1)
     make install
     popd no-output
