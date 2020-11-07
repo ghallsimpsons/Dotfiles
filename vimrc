@@ -134,6 +134,7 @@ set viminfo='20,\"500
 set backupdir=~/.vim/_backup
 set dir=~/.vim/_temp,/var/tmp,/tmp
 
+set encoding=utf-8
 scriptencoding utf-8
 
 
