@@ -30,6 +30,7 @@ Plugin 'scrooloose/nerdtree'             " files pane
 Plugin 'jistr/vim-nerdtree-tabs'         " NerdTree in all tabs
 Plugin 'bling/vim-airline'               " nifty vim statusline
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'MattesGroeger/vim-bookmarks'     " inline bookmarks and annotations
 "Plugin 'edkolev/tmuxline.vim'            " vim statusline also in tmux, breaks things
 
 " Editor features
