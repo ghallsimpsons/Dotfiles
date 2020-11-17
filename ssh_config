@@ -1,88 +1,100 @@
+# Suport ancient ssh clients
+IgnoreUnknown ProxyJump,RemoteCommand
+
 # PB Hosts
 Host bolo bolowiki bolo.berkeley.edu
     HostName bolo.berkeley.edu
     User grantlandhall
 
 # Bicep Hosts
-Host spud find.spa.umn.edu
+Host spud spud.spa.umn.edu
     ForwardX11 yes
-    HostName find.spa.umn.edu
-
-Host omega1 omega0.spa.umn.edu
-    HostName omega0.spa.umn.edu
+    HostName spud.spa.umn.edu
 
 Host bicep0 bicep0.caltech.edu
     HostName bicep0.caltech.edu
     User bicep
 
-Host badaq1 badaq1.spa.umn.edu
-    HostName badaq1.spa.umn.edu
+Host bicep63
+    ProxyJump spud
+    Port 6322
+    ForwardX11 yes
 
-Host badaq
+# $tanfurd
+Host smurf-srv03 smurf-srv12
+    User cryo
+    ForwardX11 yes
+    ProxyJump umux
+
+Host umux
+    Hostname 171.64.108.89
+    User umux
+
+Host basmurf
+    Hostname 171.64.109.90
     User badaq
-    ProxyJump omega1
-
-Match Host badaq.spa.umn.edu exec "test $(eval ps -ho cmd $PPID | awk '{print $1}') = ssh"
-    RequestTTY yes
-    RemoteCommand HOME=/home/ghall tmux new-session -A -s grant
-
-Host bamce*
-    User badaq
     ForwardX11 yes
-    ProxyJump omega1
+    ProxyJump smurf-srv12
 
-Host bahk
-    User bicep
-    ForwardX11 yes
-    ProxyJump omega1
-
-# UMN
-Host apollo apollo.cselabs.umn.edu
-    ForwardX11 yes
-    HostName apollo.cselabs.umn.edu
-
-Host atlas atlas.cselabs.umn.edu
-    ForwardX11 yes
-    HostName atlas.cselabs.umn.edu
+Host alihk
+    User ali
+    ProxyJump umux
 
 # Workstations
 Host spudws*
     ProxyJump spud
 
 Host baws*
-    ProxyJump omega1
+    ProxyJump omega0
 
 # At pole
 Host omega0 omega0.usap.gov
     HostName omega0.usap.gov
-    ProxyCommand ssh spud -W %h:%p
+    ProxyJump spud
 
 Host wvr1
-    ProxyCommand ssh omega0 -W %h:%p
+    ProxyJump omega0
     User dbarkats
     ForwardX11 yes
 
 Host signalhound*
-    ProxyCommand ssh omega0 -W %h:%p
+    ProxyJump omega0
     User keck
 
 Host bicep31 bicep32
-    ProxyCommand ssh bicep30 -W %h:%p
+    ProxyJump bicep30
     ForwardX11 yes
     User bicep
 
 Host bicep30
     HostName bicep.usap.gov
-    ProxyCommand ssh omega0 -W %h:%p
+    ProxyJump omega0
     ForwardX11 yes
     User bicep
 
-Host keck3*
-    ProxyCommand ssh omega0 -W %h:%p
+Host badaq
+    User badaq
+    ProxyJump omega0
+    ForwardX11 yes
+
+Host baant
+    User badaq
+    ProxyJump omega0
+    ForwardX11 yes
+
+Host mapodaq
+    User badaq
+    ProxyJump omega0
+    ForwardX11 yes
+
+Host bamce*
+    User badaq
+    ForwardX11 yes
+    ProxyJump omega0
 
 # S00perComputers
-Host edison edison.nersc.gov
-    HostName edison.nersc.gov
+Host bicep.rc.fas.harvard.edu
+    ProxyCommand ssh odyssey -W %h:%p
 
 Host cori cori.nersc.gov
     HostName cori.nersc.gov
